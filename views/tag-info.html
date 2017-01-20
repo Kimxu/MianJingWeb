@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div ng-repeat="elite in elites">
+    <div class="row-fluid" style="border-style:solid;border-radius: 10px;border-width: 1px;border-color:#adadad;padding: 10px;margin-top: 10px;height: 200px">
+      <div class="col-lg-8" style="border-right-style:solid;border-right-width: 1px ;border-right-color:#adadad">
+        <!--边栏内容-->
+        <div class="container-fluid">
+          <div class="row">
+            <strong class="col-lg-2 k-tag">{{elite.realName}}/{{elite.company}}</strong>
+            <strong class="col-lg-2 col-lg-offset-1 k-tag">{{elite.position}}</strong>
+            <img class="col-lg-2 col-lg-offset-5 k-avatar img-circle" src="../images/1648434f.job1.png">
+          </div>
+          <div style="margin-top: 10px">{{elite.workExperience}}</div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4">
+        <!--主体内容-->
+        <div class="container-fluid">
+          <div class="row">
+            <p class="col-lg-12">{{elite.payroll}}元 / 8小时</p>
+          </div>
+
+          <div class="row">
+            <p class="col-lg-12">被预约： {{elite.appointment}} 次</p>
+          </div>
+          <div class="row">
+            <p class="col-lg-12">可兼职时间： xxxx</p>
+          </div>
+          <div class="row">
+            <p class="col-lg-12">可兼职地点： {{elite.workLocation}}</p>
+          </div>
+          <div class="row">
+            <button class="btn btn-default col-lg-6 col-lg-offset-3">马上预约</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav style="text-align: center">
+  <ul class="pagination pagination-lg">
+    <li><a ng-click="goPre()">&laquo;</a></li>
+    <li ng-repeat=" s in totalPages() track by $index" ng-class="{active:currentPage==$index+1}"><a href="" ng-click="toPage($index+1)">{{$index+1}}</a></li>
+    <li><a ng-click="goNext()">&raquo;</a></li>
+  </ul>
+</nav>

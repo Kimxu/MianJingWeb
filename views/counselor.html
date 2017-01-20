@@ -1,0 +1,90 @@
+<div ng-controller="CounselorCtrl">
+  <div class="container visible-lg" id="counselor">
+    <div class="row" style="background-color: #b3b3b3;padding-top: 15px;padding-bottom:15px;margin-top: 10px;padding-right: 15px">
+      <div class="dropdown col-lg-1 col-md-2 visible-lg">
+        <button type="button" class="btn btn-danger dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+          城市选择
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">Java</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix visible-sm"></div>
+      <div class="dropdown col-lg-1 col-md-2 visible-lg" style="margin-left: 20px">
+        <button type="button" class="btn btn-danger dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
+          城市选择
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">Java</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6 col-md-5 col-lg-offset-1 visible-lg">
+        <div class="input-group">
+          <input type="text" class="form-control input-lg" style="height: 50px">
+          <span class="input-group-addon btn btn-danger" style="height: 50px">搜索</span>
+        </div>
+      </div>
+      <button class="btn btn-danger col-lg-2 col-md-2 visible-lg" style="float:right">成为求职顾问</button>
+    </div>
+  </div>
+  <!--<nav class="navbar navbar-default container" role="navigation" style="margin-top: 10px;border-color:transparent;background-color: #ffffff">-->
+  <!--<div class="container-fluid sort">-->
+  <!--<ul class="nav navbar-nav navbar-right">-->
+  <!--<li><a href="#" style="color: #0aabff;"><span class="glyphicon glyphicon-arrow-up"></span> 默认</a></li>-->
+  <!--<li><a href="#" style="color: #0aabff;"><span class="glyphicon  glyphicon-arrow-down"></span> 工作经验</a></li>-->
+  <!--<li><a href="#" style="color: #0aabff;"><span class="glyphicon  glyphicon-arrow-down"></span> 价格</a></li>-->
+  <!--<li><a href="#" style="color: #0aabff;"><span class="glyphicon  glyphicon-arrow-down"></span> 评价</a></li>-->
+  <!--</ul>-->
+  <!--</div>-->
+  <!--</nav>-->
+
+
+  <ul id="counselorTab" class="nav nav-tabs container" style="margin-top: 10px">
+    <li class="active"><a href="/counselor#default" data-toggle="tab">默认</a></li>
+    <li><a href="/counselor#jobs" data-toggle="tab">工作经验</a></li>
+    <li><a href="/counselor#price" data-toggle="tab">价格</a></li>
+    <li><a href="/counselor#appraise" data-toggle="tab">评价</a></li>
+  </ul>
+
+
+  <div class="tab-content container" style="margin-top: 10px">
+    <div class="tab-pane fade in active" id="default">
+      <tag-info sort="0"></tag-info>
+    </div>
+    <div class="tab-pane fade" id="jobs">
+      <tag-info sort="1"></tag-info>
+    </div>
+    <div class="tab-pane fade" id="price">
+      <tag-info sort="2"></tag-info>
+    </div>
+    <div class="tab-pane fade" id="appraise">
+      <tag-info sort="3"></tag-info>
+    </div>
+  </div>
+</div>

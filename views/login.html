@@ -1,0 +1,12 @@
+<p align="center" style="font-size: 18px;margin-top: 200px">请使用qq登录</p>
+<div align="center" style="margin-bottom: 200px" ng-controller="LoginCtrl">
+  <span id="qqLoginBtn" ng-show="!isLogin"></span>
+  <div ng-show="isLogin">
+    <span><img ng-src="{{figureurl}}" class="{size_key}"></span>
+    <span>{{nickname}}</span>
+    <span><a ng-click="signOut()">退出</a></span>
+
+
+  </div>
+  {{lll}}
+</div>

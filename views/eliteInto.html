@@ -1,0 +1,164 @@
+<div class="container elite-into" ng-controller="EliteintoCtrl">
+
+  <h2 class="text-center" style="margin-top: 60px">欢迎申请成为求职顾问</h2>
+  <p style="font-size: 16px">
+    成为学弟学妹们的求职顾问，让自己的职场经验帮助更多的职场新人。我们将为您推荐跟您经验匹配的求助信息。按时计费，先支付后再进行求职答疑。我们期待已经在职场积累了丰富经验的您，加入求职顾问的大家庭，也为自己的职业生涯开辟新的方向。
+  </p>
+
+  <div id="page-inner" class="container">
+    <div class="row" style="margin-top:30px">
+      <ul id="myTab" role="tablist">
+        <li id="step1Li" class="active blue col-lg-6">
+          <a href="" onclick="eventFun.setStep(1)">
+            1.秘密信息
+          </a>
+          <a href="/eliteInto#step1" data-toggle="tab" id="step1a"></a>
+        </li>
+        <li id="step2Li" class="gray col-lg-6">
+          <img id="step2Img" src="../images/cc43a641.blue_gray.png">
+          <a href="">
+            2.顾问信息
+          </a>
+          <a href="/eliteInto#step2" data-toggle="tab" id="step2a" style="visibility: collapse"></a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <form id="step1" class="tab-pane fade active in container" style="padding-left: 40px;padding-right: 40px">
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *真实姓名&nbsp&nbsp&nbsp&nbsp</span>
+            <input name="username" ng-model="username" required="required" placeholder="真实姓名，方便沟通和订单处理" type="text" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *联系电话&nbsp&nbsp&nbsp&nbsp</span>
+            <input name="phone" ng-model="phone" required="required" placeholder="方便联系，及接受订单提醒" type="tel" class="form-control">
+          </div>
+
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *邮箱&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input required="required" name="email" ng-model="email" type="email" placeholder="example@gmail.com" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *支付宝账号</span>
+            <input name="alipay" ng-model="alipay" required="required" placeholder="向您此账号支付报酬" type="text" class="form-control">
+          </div>
+          <div class="row" style="padding-left: 30px;padding-right: 30px;margin-bottom: 50px">
+            <a type="submit" href="" onclick="eventFun.setStep(2)" data-toggle="tab" class="btn-danger btn text-center col-lg-12 col-md-12" style="width: 100%">下一步</a>
+          </div>
+        </form>
+        <form id="step2" class="tab-pane fade container">
+          <p>顾问信息（将公开展示，是吸引客户预约的信息）</p>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *公司&nbsp&nbsp&nbsp&nbsp</span>
+            <input name="company" ng-model="company" required="required" placeholder="曾就职的公司名称" type="text" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *职位&nbsp&nbsp&nbsp&nbsp</span>
+            <input name="job" ng-model="job" required="required" placeholder="HR，资深工程师，招聘经理" type="text" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *工作年限</span>
+            <input name="workYears" ng-model="workYears" required="required" placeholder="请填写真实工作年限" type="number" class="form-control">
+            <span class="input-group-addon"> 年</span>
+          </div>
+          <div class="row" style="padding-left: 20px;padding-right: 20px">
+            <div class="dropdown col-lg-6 col-sm-6" style="margin-bottom: 20px">
+              <button type="button" style="width: 100%" name="workTime" class="btn btn-danger dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">{{dropdownMenu1}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" style="width: 100%" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" ng-click="selectTime('周一至周五')">周一至周五</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" ng-click="selectTime('周六')">周六</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" ng-click="selectTime('周日')">周日</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" ng-click="selectTime('工作日下班后')">工作日下班后</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" ng-click="selectTime('自由职业者')">自由职业者</a>
+                </li>
+              </ul>
+            </div>
+            <div class="input-group col-lg-6 col-sm-6" style="padding-left: 20px;padding-right: 15px">
+              <span class="input-group-addon"> *时薪&nbsp&nbsp&nbsp&nbsp</span>
+              <input name="hPrice" ng-model="hPrice" required="required" type="number" class="form-control">
+              <span class="input-group-addon"> /小时</span>
+            </div>
+          </div>
+
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *顾问角色</span>
+            <input name="role" ng-model="role" required="required" placeholder="请填写您在现供职企业的岗位对应的角色。" type="text" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *工作地点</span>
+            <input name="workLocation" ng-model="workLocation" required="required" placeholder="例如：海淀、朝阳" type="text" class="form-control">
+          </div>
+          <div class="input-group" style="margin: 20px">
+            <span class="input-group-addon"> *工作经历</span>
+            <textarea name="experience" ng-model="experience" required="required" placeholder="填写真实工作经历" class="form-control"></textarea>
+          </div>
+          <div class="row" style="padding-left: 30px;padding-right: 30px;margin-bottom: 50px">
+            <a ng-click="submitForm()" data-toggle="tab" class="btn-danger btn text-center col-lg-12 col-md-12" style="width: 100%">提交</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+
+  });
+  var eventFun = {
+    setStep: function (index) {
+      if ((index == 2 && checkform()) || index == 1) {
+        for (var i = 2; i <= index; i++) {
+          $("#step" + i + "Li").addClass("blue").removeClass("gray");
+          $("#step" + i + "Img").attr("src", "../images/blue_blue.png");
+        }
+        for (var i = index + 1; i <= 2; i++) {
+          $("#step" + i + "Li").addClass("gray").removeClass("blue");
+          $("#step" + i + "Img").attr("src", "../images/gray_gray.png");
+        }
+        $("#step" + (index + 1) + "Img").attr("src", "../images/blue_gray.png");
+        $('.nav-tabs a[href="#step' + index + '"]').tab('show');
+        $('#step' + index + 'a').trigger('click');
+      }
+
+    }
+  };
+
+
+  function checkform() {
+    if (step1.username.value == "") {
+      alert("请输入真实姓名！");
+      return false;
+    }
+    if (step1.phone.value == "") {
+      alert("请输入联系电话,确保11位数字！");
+      return false;
+    }
+    if (step1.email.value == "") {
+      alert("请输入邮箱,符合邮箱格式！");
+      return false;
+    }
+    if (step1.alipay.value == "") {
+      alert("请输入支付宝号码！");
+      return false;
+    }
+    return true;
+  }
+
+</script>
