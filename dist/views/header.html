@@ -1,0 +1,40 @@
+<nav ng-controller="HeaderCtrl" class="header navbar navbar-default" role="navigation" style="background-color: #be3232;padding-left: 10px;padding-right: 10px;margin-bottom: 0">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="index">面精网</a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="index.counselor">求职顾问</a></li>
+        <li><a ui-sref="index.forHelp">新人求助</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" ng-show="isLogin">
+        <li><a href="#">我的预约</a></li>
+        <li><a href="#">通知</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            {{userName}} <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">查看顾问信息</a></li>
+            <li><a href="#">修改顾问信息</a></li>
+            <li><a href="#">修改头像昵称</a></li>
+            <li class="divider"></li>
+            <li><a ng-click="signOut()">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" ng-hide="isLogin">
+        <li><a ui-sref="index.login">登录</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
